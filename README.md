@@ -26,7 +26,7 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 - opt_type : choose type of optimization from MB, SB, or RAND (multi-task Bayes, single-task Bayes, random)
 - exp_name : name for log-file
 - itr : number of BO loop
-- init_No : you can set the position of initial training points by choosing from 0 to 99
+- init_No : choose ID (from 0 to 99) which indicates a set of initial points from pre-computed index sets 
 
 ### Example
 `python run_GBopt.py -c -l MB Exp1 500 1`
@@ -38,6 +38,7 @@ GNU General Public License
 
 ### 1. Directory
 
+```
 root/
     |- Data/
     |    |- GB_init.dat
@@ -48,12 +49,13 @@ root/
     |
     |- source/...
     |- log/
+```
 
 ### 2. Input data 
 
 #### Pickle files under "gbdata/" directory
 
-[TaskNumber]_[RotationAngle]_[FileName].pickle
+(TaskNumber)_(RotationAngle)_(FileName).pickle
 
 TaskNumber: Identifier of Task. Files which has the same TaskNumber is regarded as one common task.
 RotationAngle: GB rotation angle used as task-specific descriptor.

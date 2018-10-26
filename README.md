@@ -55,7 +55,7 @@ root/
 
 #### Pickle files under "gbdata/" directory
 
-(TaskNumber)_(RotationAngle)_(FileName).pickle
+(TaskNumber)\_(RotationAngle)\_(FileName).pickle
 
 TaskNumber: Identifier of Task. Files which has the same TaskNumber is regarded as one common task.
 RotationAngle: GB rotation angle used as task-specific descriptor.

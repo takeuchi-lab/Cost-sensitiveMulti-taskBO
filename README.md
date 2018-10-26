@@ -85,7 +85,7 @@ This pickle file also contains q python dictionary variable with the following k
             Each row corresponds to "init_No" of the run_GBopt.py argument
 	    The k-th column indicates a index of a point given initially (If this value is "-1", not initial point is given for that file)
 
-### 1. Output data
+### 3. Output data
 
 Under "log/" directory, run_GBopt.py creates a directory having a name specified by "exp_name" of the "run_GBopt.py" argument. Under the directory named by each method (e.g., CMB_log), the "log_exp[init_No].pickle" directory contains dictionary variable with the following keys:
 

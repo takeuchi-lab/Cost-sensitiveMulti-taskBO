@@ -55,7 +55,7 @@ root/
 
 #### Pickle files under "gbdata/" directory
 
-This directory contains a set of input data files which has the following format of the name:
+This directory contains a set of input data files which have the following format of the name:
 
 (TaskNumber)\_(RotationAngle)\_(FileName).pickle
 

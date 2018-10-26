@@ -57,8 +57,8 @@ root/
 
 (TaskNumber)\_(RotationAngle)\_(FileName).pickle
 
-TaskNumber: Identifier of Task. Files which has the same TaskNumber is regarded as one common task.
-RotationAngle: GB rotation angle used as task-specific descriptor.
+TaskNumber: Identifier of Task. Files which has the same TaskNumber is regarded as one common task. 
+RotationAngle: GB rotation angle used as task-specific descriptor. 
 FileName: Arbitrary file name.
 
 Each pickle file should contain a python dictionary variable with the following keys:

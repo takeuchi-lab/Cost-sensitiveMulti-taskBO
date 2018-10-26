@@ -6,6 +6,9 @@ import os
 import sys
 import argparse
 import time
+from source import MB_GBopt
+from source import RAND_GBopt
+from source import SB_GBopt
 
 ##### argment #####
 parser = argparse.ArgumentParser(description="[Code of Bayesian optimization for GB structure]")
@@ -33,7 +36,7 @@ if args.opt_type == "MB":
 	else:
 		l = " "
 
-	os.system("python ./source/MB_GBopt.py"+c+l+" "+args.exp_name+" "+str(args.itr)+" "+str(args.init_No))
+        MB_GBopt.MB_GBopt(args.exp_name, args.itr, args.init_No, c, l)
 
 elif args.opt_type == "SB":
 	if args.cost:
@@ -46,7 +49,7 @@ elif args.opt_type == "SB":
 	else:
 		l = " "
 
-	os.system("python ./source/SB_GBopt.py"+c+l+" "+args.exp_name+" "+str(args.itr)+" "+str(args.init_No))
+        SB_GBopt.SB_GBopt(args.exp_name, args.itr, args.init_No, c, l)
 
 elif args.opt_type == "RAND":
 	if args.cost:
@@ -60,7 +63,7 @@ elif args.opt_type == "RAND":
 	else:
 		l = " "
 
-	os.system("python ./source/RAND_GBopt.py"+c+l+" "+args.exp_name+" "+str(args.itr)+" "+str(args.init_No))
+        RAND_GBopt.RAND_GBopt(args.exp_name, args.itr, args.init_No, c, l)
 
 else:
 	print("please choose Optimization type from \"MB\",\"SB\" and \"RAND\"")

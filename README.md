@@ -26,7 +26,7 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 - opt_type : choose type of optimization from MB, SB, or RAND (multi-task Bayes, single-task Bayes, random)
 - exp_name : name for log-file
 - itr : number of BO loop
-- init_No : choose ID (from 0 to 99) which indicates a set of initial points from pre-computed index sets 
+- init_No : choose ID (from 0 to 99) which indicates a set of initial points (fixed by a pre-computed index set)
 
 ### Example
 `python run_GBopt.py -c -l MB Exp1 500 1`
@@ -55,6 +55,8 @@ root/
 
 #### Pickle files under "gbdata/" directory
 
+This directory contains a set of input data files which has the following format of the name:
+
 (TaskNumber)\_(RotationAngle)\_(FileName).pickle
 
 - TaskNumber: Identifier of each task. Files which has the same TaskNumber are regarded as one common task.  
@@ -77,7 +79,7 @@ Each pickle file should contain a python dictionary variable with the following 
 
 #### Data/GB_init.pickle
 
-This pickle file also contains q python dictionary variable with the following keys:
+This pickle file also contains a python dictionary variable with the following keys:
 
 - "dir_name": Directory name (string) under which GB data is located ("gbdata")  
 
@@ -103,4 +105,4 @@ Under "log/" directory, run_GBopt.py creates a directory having a name specified
         K dimensional numpy array  
     
 - "selected_p": sample ID selected by each iteration  
-        (T x 2) numpy array [p_1,p_2,p_3,...,p_T], where p_t = [task ID selected by t-th iteration, sample ID selected by t-th iteration]
+        (T x 2) numpy array [p_1,p_2,p_3,...,p_T], where p_t = [task ID selected at the t-th iteration, sample ID selected at the t-th iteration]

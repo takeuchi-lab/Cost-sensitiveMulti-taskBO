@@ -86,8 +86,8 @@ This pickle file also contains a python dictionary variable with the following k
 
 - "all_init": initial points for Bayesian optimization  
             (100 x TheNumberOfInputFiles)  
-            Each row corresponds to "init_No" of the run_GBopt.py argument  
-	    The k-th column indicates an index of a point given initially (If this value is "-1", not initial point is given for that file)  
+            Each row corresponds to "init_No" of the run_GBopt.py argument.  
+	    The k-th column indicates an index of a point given initially (If this value is "-1", no initial point is given for that file).  
 
 ### 3. Output data
 

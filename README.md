@@ -41,10 +41,10 @@ GNU General Public License
 ```
 root/
     |- Data/
-    |    |- GB_init.dat
+    |    |- GB_init.pickle
     |    |- gbdata/
-    |           |- GB1.pickle
-    |           |- GB2.pickle
+    |           |- 00_020_foo.pickle
+    |           |- 00_020_bar.pickle
     |           |-  ...
     |
     |- source/...

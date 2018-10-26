@@ -15,6 +15,7 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 
 ## Environmental Requirement
 - Python version 2.7.15
+- Please install required packages when the python "ImportError" occurs
 
 ## Usage
 `python run_GBopt.py [-h] [-c] [-l] opt_type exp_name itr init_No`

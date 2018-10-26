@@ -59,9 +59,9 @@ This directory contains a set of input data files which have the following forma
 
 (TaskNumber)\_(RotationAngle)\_(FileName).pickle
 
-- TaskNumber: Identifier of each task. Files which have the same TaskNumber are regarded as one common task.  
+- TaskNumber: identifier of each task. Files which have the same TaskNumber are regarded as one common task.  
 - RotationAngle: GB rotation angle used as task-specific descriptor.  
-- FileName: Arbitrary file name.  
+- FileName: arbitrary file name.  
 
 Each pickle file should contain a python dictionary variable with the following keys:
 
@@ -81,9 +81,9 @@ Each pickle file should contain a python dictionary variable with the following 
 
 This pickle file also contains a python dictionary variable with the following keys:
 
-- "dir_name": Directory name (string) under which GB data is located ("gbdata")  
+- "dir_name": directory name (string) under which GB data is located ("gbdata")  
 
-- "all_init": Initial points for Bayesian optimization  
+- "all_init": initial points for Bayesian optimization  
             (100 x TheNumberOfInputFiles)  
             Each row corresponds to "init_No" of the run_GBopt.py argument  
 	    The k-th column indicates an index of a point given initially (If this value is "-1", not initial point is given for that file)  

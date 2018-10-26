@@ -66,7 +66,7 @@ This directory contains a set of input data files which have the following forma
 Each pickle file should contain a python dictionary variable with the following keys:
 
 - "input_des": structure-specific descriptor  
-             (n x p) numpy array, where n is the number of sample in the individual pickle file and p is the dimension of the structure-specific descriptor.
+             (n x p) numpy array, where n is the number of samples in the individual pickle file and p is the dimension of the structure-specific descriptor.
 
 - "Ene": GB Energy  
        n dimensional numpy array
@@ -86,7 +86,7 @@ This pickle file also contains a python dictionary variable with the following k
 - "all_init": Initial points for Bayesian optimization  
             (100 x TheNumberOfInputFiles)  
             Each row corresponds to "init_No" of the run_GBopt.py argument  
-	    The k-th column indicates a index of a point given initially (If this value is "-1", not initial point is given for that file)  
+	    The k-th column indicates an index of a point given initially (If this value is "-1", not initial point is given for that file)  
 
 ### 3. Output data
 
@@ -95,7 +95,7 @@ Under "log/" directory, run_GBopt.py creates a directory having a name specified
 - "regret": simple regret[eV/A^2] in each iteration  
         (T x K) numpy array where T is the number of iteration and K is the number of tasks  
 
-- "cum_cost": cumulative cost at each iteraion  
+- "cum_cost": cumulative cost at each iteration  
         T dimensional numpy array  
     
 - "train_num": the number of samples at each iteration  

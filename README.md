@@ -66,7 +66,7 @@ This directory contains a set of input data files which have the following forma
 Each pickle file should contain a python dictionary variable with the following keys:
 
 - "input_des": structure-specific descriptor  
-             (n x p) numpy array, where n is the number of sample in the individual pickle file  
+             (n x p) numpy array, where n is the number of sample in the individual pickle file and p is the dimension of the structure-specific descriptor.
 
 - "Ene": GB Energy  
        n dimensional numpy array

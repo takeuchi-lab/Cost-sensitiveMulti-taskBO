@@ -2,7 +2,7 @@
 Knowledge-Transfer-Based Cost-Effective Search for Interface Structures
 
 <div align="center">
-<img src="figs/fig.png">
+<img src="figs/fig.png" width="600px">
 </div>
 
 ## Abstract

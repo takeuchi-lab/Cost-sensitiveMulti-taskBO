@@ -24,7 +24,7 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 - -c : use cost-sensitive acquisition function
 - -l : use log-scaled energy
 - opt_type : choose type of optimization from MB, SB, or RAND (multi-task Bayes, single-task Bayes, random)
-- exp_name : name for log-file
+- exp_name : directory name under which log-files are saved
 - itr : number of BO loop
 - init_No : choose ID (from 0 to 99) which indicates a set of initial points (fixed by a pre-computed index set)
 
@@ -93,7 +93,7 @@ This pickle file also contains a python dictionary variable with the following k
 Under "log/" directory, run_GBopt.py creates a directory having a name specified by "exp_name" of the "run_GBopt.py" argument. Under the directory named by each method (e.g., CMB_log), the "log_exp[init_No].pickle" directory contains dictionary variable with the following keys:
 
 - "regret": simple regret[eV/A^2] in each iteration  
-        (T x K) numpy array where T is the number of iteration and K is the number of tasks  
+        (T x K) numpy array where T is the number of iterations and K is the number of tasks  
 
 - "cum_cost": cumulative cost at each iteration  
         T dimensional numpy array  

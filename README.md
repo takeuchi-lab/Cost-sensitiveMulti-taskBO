@@ -28,7 +28,7 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 - opt_type : choose type of optimization from MB, SB, or RAND (multi-task Bayes, single-task Bayes, random)
 - exp_name : directory name under which log-files are saved
 - itr : number of BO loop
-- init_No : choose ID (from 0 to 99) which indicates a set of initial points (fixed by a pre-computed index set)
+- init_No : choose ID (from 0 to 19) which indicates a set of initial points (fixed by a pre-computed index set)
 
 ### Example
 `python run_GBopt.py -c -l MB Exp1 500 1`
@@ -86,13 +86,13 @@ This pickle file also contains a python dictionary variable with the following k
 - "dir_name": directory name (string) under which GB data is located ("gbdata")  
 
 - "all_init": initial points for Bayesian optimization  
-            (100 x TheNumberOfInputFiles)  
+            (20 x TheNumberOfInputFiles)  
             Each row corresponds to "init_No" of the run_GBopt.py argument.  
 	    The k-th column indicates an index of a point given initially (If this value is "-1", no initial point is given for that file).  
 
 ### 3. Output data
 
-Under "log/" directory, run_GBopt.py creates a directory having a name specified by "exp_name" of the "run_GBopt.py" argument. Under the directory named by each method (e.g., CMB_log), the "log_exp[init_No].pickle" directory contains dictionary variable with the following keys:
+Under "log/" directory, run_GBopt.py creates a directory having a name specified by "exp_name" of the "run_GBopt.py" argument. Under the directory named by each method (e.g., CMB_log), the "log_exp[init_No].pickle" file contains dictionary variable with the following keys:
 
 - "regret": simple regret[eV/A^2] in each iteration  
         (T x K) numpy array where T is the number of iterations and K is the number of tasks  

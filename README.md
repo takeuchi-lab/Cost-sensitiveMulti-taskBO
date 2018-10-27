@@ -74,7 +74,7 @@ Each pickle file should contain a python dictionary variable with the following 
        n dimensional numpy array
 
 - "task_des": task-specific descriptor  
-            (n x q) numpy array, where q is the dimension of the task-specific descriptor  
+            q dimensional numpy array, where q is the dimension of the task-specific descriptor  
         
 - "cost": observation cost  
         scalar float variable  

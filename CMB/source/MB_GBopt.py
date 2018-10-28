@@ -63,6 +63,7 @@ def MB_GBopt(exp_name, itr, init_No, cost, logscale):
         gbID = np.zeros(K)
         for k in range(K):
 
+                GB_list[k] = GB_list[k].replace(os.path.sep,"/")
                 ##### open pickle file #####
                 with open(GB_list[k],"rb") as f:
                         gb = pickle.load(f)

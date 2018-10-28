@@ -81,6 +81,7 @@ def SB_GBopt(exp_name, itr, init_No, cost, logscale):
         gps = []
         for k in range(K):
 
+                GB_list[k] = GB_list[k].replace(os.path.sep,"/")
                 ##### open pickle file #####
                 with open(GB_list[k],"rb") as f:
                         gb = pickle.load(f)

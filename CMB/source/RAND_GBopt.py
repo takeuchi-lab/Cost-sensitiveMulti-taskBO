@@ -57,35 +57,36 @@ def RAND_GBopt(exp_name, itr, init_No, cost, logscale):
     ##### set object functions #####
     gbID = np.zeros(K)
     for k in range(K):
+        GB_list[k] = GB_list[k].replace(os.path.sep,"/")
 
-            ##### open pickle file #####
-            with open(GB_list[k],"rb") as f:
-                    gb = pickle.load(f)
+        ##### open pickle file #####
+        with open(GB_list[k],"rb") as f:
+                gb = pickle.load(f)
 
-            name = ((GB_list[k]).split("/")[-1])
-            angle = 90-abs(90-int(((((GB_list[k]).split("/")[-1]).split(".")[0]).split("_"))[1]))
-            gbID[k] = int(((((GB_list[k]).split("/")[-1]).split(".")[0]).split("_"))[0])
+        name = ((GB_list[k]).split("/")[-1])
+        angle = 90-abs(90-int(((((GB_list[k]).split("/")[-1]).split(".")[0]).split("_"))[1]))
+        gbID[k] = int(((((GB_list[k]).split("/")[-1]).split(".")[0]).split("_"))[0])
 
 
-            X = gb["input_des"]
-            Y = gb["Ene"]
+        X = gb["input_des"]
+        Y = gb["Ene"]
 
-            not_NaN = (Y==Y)
-            X = X[not_NaN,:]
-            Y = Y[not_NaN]
+        not_NaN = (Y==Y)
+        X = X[not_NaN,:]
+        Y = Y[not_NaN]
 
-            if logscale:
-                    OBS = -np.log(Y)
-            else: 
-                    OBS = -Y
+        if logscale:
+                OBS = -np.log(Y)
+        else: 
+                OBS = -Y
 
-            init = init_data[k]
-            if init < 0:
-                    init = []
+        init = init_data[k]
+        if init < 0:
+                init = []
 
-            mtgpr.add_objFunc(name=name, allX=X, allY=OBS, trainID=init, task_descriptor01=(gb["task_des"]), task_descriptor02=angle, cost=gb["cost"])	
-            mtgpr.gps[-1].org_Y = np.copy(OBS)
-            mtgpr.gps[-1].ForRegret = np.copy(-Y)
+        mtgpr.add_objFunc(name=name, allX=X, allY=OBS, trainID=init, task_descriptor01=(gb["task_des"]), task_descriptor02=angle, cost=gb["cost"])	
+        mtgpr.gps[-1].org_Y = np.copy(OBS)
+        mtgpr.gps[-1].ForRegret = np.copy(-Y)
 
     Khat = np.shape(np.unique(gbID))[0]
     gbID = gbID.astype("int64")

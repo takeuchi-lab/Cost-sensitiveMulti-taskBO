@@ -14,7 +14,6 @@ The basic idea of transfer learning is to transfer knowledge among different (bu
 The code currently available here is to reproduce our results on fcc-Al [110] tilt grain boundary. We are planing to update our code so that it can apply to other systems for practical use.
 
 ## Environmental Requirement
-- Linux, MACOS
 - Python version 2.7.15
 - Please install required packages when the python "ImportError" occurs
 
@@ -28,7 +27,8 @@ The code currently available here is to reproduce our results on fcc-Al [110] ti
 - opt_type : choose type of optimization from MB, SB, or RAND (multi-task Bayes, single-task Bayes, random)
 - exp_name : directory name under which log-files are saved
 - itr : number of BO loop
-- init_No : choose ID (from 0 to 19) which indicates a set of initial points (fixed by a pre-computed index set)
+- init_No : random seed (non-negative integer) for the initial point selection (1 sample per task)
+
 
 ### Example
 `python run_GBopt.py -c -l MB Exp1 500 1`
@@ -43,7 +43,6 @@ GNU General Public License
 ```
 root/
     |- Data/
-    |    |- GB_init.pickle
     |    |- gbdata/
     |           |- 00_020_foo.pickle
     |           |- 00_020_bar.pickle
@@ -51,6 +50,7 @@ root/
     |
     |- source/...
     |- log/
+    |- run_GBopt.py
 ```
 
 ### 2. Input data 
@@ -79,16 +79,6 @@ Each pickle file should contain a python dictionary variable with the following 
 - "cost": observation cost  
         scalar float variable  
 
-#### Data/GB_init.pickle
-
-This pickle file also contains a python dictionary variable with the following keys:
-
-- "dir_name": directory name (string) under which GB data is located ("gbdata")  
-
-- "all_init": initial points for Bayesian optimization  
-            (20 x TheNumberOfInputFiles)  
-            Each row corresponds to "init_No" of the run_GBopt.py argument.  
-	    The k-th column indicates an index of a point given initially (If this value is "-1", no initial point is given for that file).  
 
 ### 3. Output data
 

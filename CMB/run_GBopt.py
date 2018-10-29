@@ -1,6 +1,3 @@
-#!/usr/bin/python
-#coding:utf-8
-
 from __future__ import division
 import os
 import sys
@@ -69,6 +66,3 @@ else:
 	print("please choose Optimization type from \"MB\",\"SB\" and \"RAND\"")
 
 print("Elapsed_time: "+str(round(time.time()-start,3))+"[sec]")
-
-
-

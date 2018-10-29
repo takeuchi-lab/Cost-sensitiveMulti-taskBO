@@ -193,7 +193,7 @@ class DBLZs_MTGPRegression(object):
 
 
 		else:
-			batchsize = 500
+			batchsize = 10
 			ns = 0
 			nact = n / batchsize
 			mean = np.zeros(n)

@@ -14,6 +14,7 @@ The basic idea of transfer learning is to transfer knowledge among different (bu
 The code currently available here is to reproduce our results on fcc-Al [110] tilt grain boundary. We are planing to update our code so that it can apply to other systems for practical use.
 
 ## Environmental Requirement
+- Linux, MACOS
 - Python version 2.7.15
 - Please install required packages when the python "ImportError" occurs
 
